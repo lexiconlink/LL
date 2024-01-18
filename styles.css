@@ -1,0 +1,157 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: "Verdana", Arial, sans-serif;
+    background-color: #111; /* Dark mode background */
+    color: #111; /* Light text on dark background */
+    
+    background-image: url("graphics/bg2.jpg");
+}
+
+/* Header styles */
+header {
+    position: fixed;
+    width: 100%;
+    height: px;
+    background-color: #333; /* Header background color */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    /* Add styles for your logo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav a {
+    color: #fff; /* Nav link color */
+    text-decoration: none;
+}
+
+/* Hero section styles */
+.hero {
+    text-align: center; /* Center-align text within the hero section */
+    padding: 80px 20px; /* Adjust padding as needed */
+    //position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%; /* Makes the image responsive to its parent container */
+    height: auto; /* Maintains the image aspect ratio */
+    display: block; /* Removes extra space below inline images */
+}
+}
+
+/* Services section styles */
+.services {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+/* Contact section styles */
+.contact {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    /* Add responsive styles as needed */
+}
+
+
+/* Logo styles */
+.logo {
+    padding: 10px; /* Adjust as needed */
+}
+
+.logo img {
+    max-height: 100%; /* Make sure the logo fits within the header */
+    max-width: 100%; /* Make sure the logo fits within the header */
+}
+
+.about {
+    padding: 20px;
+    text-align: left;
+}
+
+.about-content {
+    max-width: 800px; /* Adjust width as needed */
+    margin: 0 auto;
+}
+
+.about h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.about p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+
+main {
+    max-width: 800px; /* Adjust main content width */
+    margin: 20px auto;
+}
+
+.services-content {
+    margin-bottom: 35px;
+}
+
+.services-content h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.services-content p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.services-footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 10px 0;
+}
+
+footer {
+    text-align: center; /* Center-align the content */
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    padding: 20px; /* Add padding for better visibility */
+    position: fixed; /* Position the footer at the bottom */
+    width: 100%; /* Full width */
+    bottom: 0; /* Stick to the bottom */
+}
