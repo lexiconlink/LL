@@ -4,38 +4,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LEXICON LINK</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link the services-specific CSS file -->
+    <title>Contact | LEXICON LINK</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <header class="fixed-header">
-        <div class="logo">
-            <img src="graphics/ll-logo-white.png" alt="Logo Placeholder">
+<header class="fixed-header">
+    <div class="logo">
+        <img src="graphics/ll-logo-white.png" alt="LEXICON LINK">
+    </div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index-J.html">日本語</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="services-content" style="padding: 120px 20px 80px 20px;">
+        
+        <div class="content-box">
+            <div id="contact-header">
+                <h2 style="font-size: 24px; margin-bottom: 40px; text-align: center; letter-spacing: 2px;">
+                    CONTACT 
+                    <span style="display: block; font-size: 14px; margin-top: 10px; font-weight: 400; color: rgba(0,0,0,0.5); letter-spacing: 1px;">Engage Our Expertise</span>
+                </h2>
+                <p style="text-align: left; max-width: 850px; margin-left: auto; margin-right: auto; line-height: 2; margin-bottom: 40px;">
+                    Lexicon Link provides strategic linguistic oversight and operational support for high-stakes Japanese market engagements. Please provide a brief overview of your requirements below, and our team will get back to you shortly.
+                </p>
+            </div>
+            
+            <div id="thank-you-message" style="display:none; text-align:center; padding: 60px 20px; min-height: 350px;">
+                <h2 style="color: #2c3e50; font-size: 26px; margin-bottom: 20px;">Inquiry Received</h2>
+                <p style="font-size: 16px; line-height: 1.8; color: #444; max-width: 500px; margin: 0 auto;">
+                    Thank you for contacting Lexicon Link.<br><br>
+                    We have received your message. Our team will review the details and provide a professional response within one business day.
+                </p>
+            </div>
+
+            <form id="contact-form" action="https://script.google.com/macros/s/AKfycbxnhAjKtQ--zgpxT6l4RZPcZAiLZZHyvRpJvaqYHrkUbHXA11gf20TOyF2-gUeaacMPkQ/exec" method="POST" class="inquiry-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Company</label>
+                        <input type="text" name="company" placeholder="Company Name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Business Email</label>
+                    <input type="email" name="email" placeholder="example@company.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Service of Interest</label>
+                    <select name="service">
+                        <option value="Localization & Transcreation">Multilingual Localization & Transcreation</option>
+                        <option value="AI & Language Solutions">Language Technology & AI Solutions</option>
+                        <option value="Testing & LQA">Software Testing & Linguistic QA</option>
+                        <option value="Japan Market Entry">Japan Market Entry & Advisory</option>
+                        <option value="Executive Support">Executive Interpreting & Support</option>
+                        <option value="Other">Other Specialized Request</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Project Brief</label>
+                    <textarea name="message" rows="5" placeholder="Please describe your project, timeline, or specific requirements..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-solid">Submit Inquiry</button>
+            </form>
         </div>
-        <nav>
-            <ul class="nav-links">
-            	<li><a href="index.html">About</a></li>
-				<li><a href="services.html">Services</a></li> <!-- Updated link -->
-				<li><a href="contact.html">Contact</a></li>
-                <li><a href="index-J.html">日本語</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <p>
-            For all inquiries, please email us freely at:<br><br><img src="graphics/inquiry.png" alt="Email Placeholder">
-            <br><br>Thank you very much.
-        </p>
-    </main>
+    </section>
+</main>
     
-            <!-- Footer section -->
-    <footer>
-        <p>&copy; 2024 LEXICON LINK. All Rights Reserved.</p>
-    </footer>
-</body>
+<footer style="padding: 80px 20px; text-align: center; background-color: #222;">
+    <div style="font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: 2px; text-transform: uppercase;">
+        &copy; 2026 LEXICON LLC | TOKYO, JAPAN | ALL RIGHTS RESERVED.
+    </div>
+</footer>
 
+<script>
+  const form = document.getElementById('contact-form');
+  const msg = document.getElementById('thank-you-message');
+  const header = document.getElementById('contact-header');
+  const contentBox = document.querySelector('.content-box');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    const btn = form.querySelector('button');
+    btn.textContent = "Processing...";
+    btn.disabled = true;
+    btn.style.opacity = "0.7";
+
+    const scriptURL = form.action;
+    const formData = new FormData(form);
+    const params = new URLSearchParams(formData);
+
+    fetch(scriptURL, { 
+        method: 'POST', 
+        body: params, 
+        mode: 'no-cors' 
+    })
+    .then(() => {
+        if (header) header.style.display = 'none'; 
+        form.style.display = 'none';                
+        msg.style.display = 'block';                
+        
+        window.scrollTo({
+            top: contentBox.offsetTop - 100,
+            behavior: 'smooth'
+        });
+    })
+    .catch(error => {
+        console.error('Error!', error.message);
+        alert("Submission error. Please email inquiry@lexiconlink.com directly.");
+        btn.textContent = "Submit Inquiry";
+        btn.disabled = false;
+        btn.style.opacity = "1";
+    });
+  });
+</script>
+
+</body>
 </html>
